@@ -29,6 +29,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".VideoActivity"/>
+        <activity android:name=".SeekToActivity"/>
+        <activity android:name=".PicActivity"/>
     </application>
 
 </manifest>

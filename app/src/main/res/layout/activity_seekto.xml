@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout android:id="@+id/adcontainer"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+    </RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        android:id="@+id/play"
+        android:layout_alignParentTop="true"
+        />
+    <EditText
+        android:id="@+id/seek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/play"
+        android:layout_alignParentLeft="true"
+        android:textColor="#ff000000"
+        android:ems="7"
+        android:hint=""
+        />
+    <Button
+        android:id="@+id/go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/seek"
+        android:text="@string/go"
+        />
+    <TextView
+        android:layout_below="@+id/seek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world"
+        android:id="@+id/text"
+        />
+
+</RelativeLayout>

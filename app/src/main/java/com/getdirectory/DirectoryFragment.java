@@ -29,7 +29,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.mediaplayer.demo.PicActivity;
 import com.mediaplayer.demo.R;
+import com.mediaplayer.demo.SeekToActivity;
 import com.mediaplayer.demo.VideoActivity;
 
 public class DirectoryFragment extends Fragment {
@@ -236,10 +238,8 @@ public class DirectoryFragment extends Fragment {
 //                            return;
 //                        }
 //                        showErrorBox(file.getAbsolutePath());
-                        Intent intent = new Intent();
-                        intent.putExtra("videopath", file.getAbsolutePath());
-                        intent.setClass(getActivity(), VideoActivity.class);
-                        startActivity(intent);
+//                        gotoVideoActivity(file);
+                        gotoPicActivity(file);
                     }
                 }
             });
@@ -252,6 +252,27 @@ public class DirectoryFragment extends Fragment {
             }
         }
         return fragmentView;
+    }
+
+    private void gotoVideoActivity(File file) {
+        Intent intent = new Intent();
+        intent.putExtra("videopath", file.getAbsolutePath());
+        intent.setClass(getActivity(), VideoActivity.class);
+        startActivity(intent);
+    }
+
+    private void gotoSeekToActivity(File file) {
+        Intent intent = new Intent();
+        intent.putExtra("filepath", file.getAbsolutePath());
+        intent.setClass(getActivity(), SeekToActivity.class);
+        startActivity(intent);
+    }
+
+    private void gotoPicActivity(File file) {
+        Intent intent = new Intent();
+        intent.putExtra(PicActivity.PIC_PATH, file.getAbsolutePath());
+        intent.setClass(getActivity(), PicActivity.class);
+        startActivity(intent);
     }
 
     private void listRoots() {
